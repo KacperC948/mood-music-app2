@@ -1,0 +1,48 @@
+/* Tło dla całej strony */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    background-color: #e0f7da;  /* Jasnozielone tło */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Główne tytuły */
+  h1 {
+    font-size: 3rem;
+    color: #2e7d32;  /* Ciemnozielony */
+    margin-bottom: 20px;
+  }
+  
+  /* Opis tekstu */
+  p {
+    font-size: 1.2rem;
+    color: #4caf50;
+    margin-bottom: 30px;
+  }
+  
+  /* Stylowanie przycisku */
+  button {
+    background-color: #4caf50; /* Zielony */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px; /* Zaokrąglone rogi */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Płynna animacja zmiany koloru */
+  }
+  
+  /* Zmiana koloru przy hover */
+  button:hover {
+    background-color: #388e3c; /* Trochę ciemniejszy odcień zielonego */
+  }
+  
+  /* Prosty cień dla przycisków */
+  button {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

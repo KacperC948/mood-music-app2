@@ -1,0 +1,106 @@
+/* Tło dla całej strony */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ustawienie zawartości na początku strony */
+    align-items: center;
+    min-height: 100vh; /* Pełna wysokość widoku */
+    padding: 20px;
+    background-color: #e0f7e9; /* Jasnozielone tło */
+    box-sizing: border-box;
+  }
+  
+  /* Główne tytuły */
+  h2 {
+    font-size: 2.5rem;
+    color: #2e7d32;
+    margin-bottom: 20px;
+  }
+  
+  /* Styl dla formularza */
+  form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Pole input */
+  input {
+    padding: 10px;
+    border: 2px solid #4caf50;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Zmiana koloru obramowania przy focus */
+  input:focus {
+    border-color: #2e7d32;
+  }
+  
+  /* Stylowanie przycisku Zapisz */
+  button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #388e3c;
+  }
+  
+  /* Stylowanie kafelków nastroju */
+  .mood-tiles {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .mood-tiles button {
+    background-color: #a5d6a7; /* Jasny zielony */
+    color: #2e7d32;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mood-tiles button:hover {
+    background-color: #81c784; /* Ciemniejszy zielony */
+    transform: scale(1.05); /* Efekt powiększenia przy najechaniu */
+  }
+  
+  .loading {
+    font-size: 1.2rem;
+    color: #4caf50;
+    margin-top: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  ul li {
+    padding: 10px;
+    background-color: #a5d6a7;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+  }
+  

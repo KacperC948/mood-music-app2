@@ -1,0 +1,69 @@
+<div class="container">
+    <h2>Wybierz swój nastrój</h2>
+
+    <div class="form-group">
+      <!-- <label for="apiKey">Podaj klucz API OpenAI:</label> -->
+      <input type="text"
+             id="apiKey"
+             class="form-control"
+             [(ngModel)]="apiKey"
+             name="apiKey"
+             placeholder="Wpisz klucz API"
+             required
+             #apiKeyField="ngModel">
+    </div>
+    
+    <div *ngIf="apiKeyField.invalid && apiKeyField.touched">
+      <small *ngIf="apiKeyField.errors?.['required']" class="error-text">
+        Klucz API jest wymagany.
+      </small>
+    </div>
+
+    <form #moodForm="ngForm" (ngSubmit)="submitMood()" novalidate>
+      <div style="padding-top: 20px;" class="form-group">
+        <input type="text" 
+               id="moodInput" 
+               class="form-control" 
+               [(ngModel)]="moodInput" 
+               name="moodInput" 
+               placeholder="Opisz swój nastrój" 
+               required 
+               maxlength="200" 
+               #moodInputField="ngModel">
+      </div>
+  
+      <div *ngIf="moodInputField.invalid && moodInputField.touched">
+        <small *ngIf="moodInputField.errors?.['maxlength']" class="error-text">
+          Nastrój nie może przekraczać 200 znaków.
+        </small>
+        <small *ngIf="moodInputField.errors?.['required']" class="error-text">
+          Pole jest wymagane.
+        </small>
+      </div>
+  
+      <h3>Lub wybierz z poniższej listy:</h3>
+      <div style="padding-bottom: 20px;" class="mood-tiles">
+        <button type="button" *ngFor="let mood of moods" (click)="selectMood(mood)">
+          {{ mood }}
+        </button>
+      </div>
+  
+      <button type="submit" class="btn btn-success" [disabled]="moodForm.invalid || loading">
+        Zapisz nastrój
+      </button>
+    </form>
+  
+    <!-- Wyświetlanie statusu ładowania -->
+    <div *ngIf="loading" class="loading">
+      Ładowanie rekomendacji piosenek...
+    </div>
+  
+    <!-- Wyświetlanie listy rekomendowanych piosenek -->
+    <div *ngIf="!loading && recommendedSongs.length > 0">
+      <h3>Rekomendowane piosenki:</h3>
+      <ul>
+        <li *ngFor="let song of recommendedSongs">{{ song }}</li>
+      </ul>
+    </div>
+  </div>
+  
